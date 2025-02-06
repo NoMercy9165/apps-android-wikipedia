@@ -10,7 +10,7 @@ import org.wikipedia.views.AppTextView
 data class UiElement(
     val viewClass: Class<*>,
     val id: String,
-    val contentDescription: String? = null
+    val contentDescription: String = ""
 )
 
 val skipButton = UiElement(
@@ -54,7 +54,7 @@ val headerUnderLogo = UiElement(
 val subtitle = UiElement(
     viewClass = AppTextView::class.java,
     id = "secondaryTextView",
-    contentDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    contentDescription = "onboarding_multilingual_secondary_text"
 )
 
 val languageLabel = UiElement(
