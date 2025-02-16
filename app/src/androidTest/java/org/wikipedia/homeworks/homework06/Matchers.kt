@@ -50,7 +50,7 @@ class NegativeSideLengthMatcher : TypeSafeMatcher<Shape>() {
     }
 
     override fun matchesSafely(item: Shape): Boolean {
-        return item.sideLength < 0
+        return item.sideLength >= 0
     }
 }
 
