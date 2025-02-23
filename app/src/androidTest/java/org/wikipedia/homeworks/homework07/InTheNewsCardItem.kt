@@ -23,6 +23,7 @@ class InTheNewsCardItem(matcher: Matcher<View>) : KRecyclerItem<InTheNewsCardIte
     }
 
     val sliderNewsCard = KRecyclerView(
+        parent = matcher,
         builder = {
             withId(R.id.news_cardview_recycler_view)
         },

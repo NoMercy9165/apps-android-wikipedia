@@ -23,6 +23,7 @@ class TopReadCardItem(matcher: Matcher<View>) : KRecyclerItem<TopReadCardItem>(m
     }
 
     val topReadList = KRecyclerView(
+        parent = matcher,
         builder = {
             withId(R.id.view_list_card_list)
         },
