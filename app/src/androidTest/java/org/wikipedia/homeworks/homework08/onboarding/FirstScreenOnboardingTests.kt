@@ -94,4 +94,15 @@ class FirstScreenOnboardingTests : TestCase() {
             }
         }
     }
+
+    @Test
+    fun checkButtonAddLanguage() {
+        run {
+            step("Opening the first screen and checking the add language button") {
+                OnboardingScreens.slider.childAt<OnboardingPagerFirstItem>(0) {
+                    addLanguageButton.isDisplayed()
+                }
+            }
+        }
+    }
 }
