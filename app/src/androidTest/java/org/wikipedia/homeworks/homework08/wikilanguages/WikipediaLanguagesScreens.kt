@@ -1,5 +1,6 @@
 package org.wikipedia.homeworks.homework08.wikilanguages
 
+import android.widget.ImageButton
 import com.kaspersky.kaspresso.screens.KScreen
 import io.github.kakaocup.kakao.recycler.KRecyclerView
 import io.github.kakaocup.kakao.text.KButton
@@ -24,4 +25,9 @@ object WikipediaLanguagesScreens : KScreen<WikipediaLanguagesScreens>() {
             itemType(::AddButtonItem)
         }
     )
+
+    val backButton = KButton {
+        isDescendantOfA { withId(R.id.toolbar) }
+        isInstanceOf(ImageButton::class.java)
+    }
 }

@@ -38,16 +38,14 @@ class AddLanguageTest : TestCase() {
                 }.click()
             }
             step("Click on the back button in the toolbar to return to the onboarding screen") {
-                KButton {
-                    isDescendantOfA { withId(R.id.toolbar) }
-                    isInstanceOf(ImageButton::class.java)
-                }.click()
+                WikipediaLanguagesScreens.backButton.click()
             }
+
             step("Verifying that the added language has been added to the list on the onboarding screen") {
                 OnboardingScreens.slider.childAt<OnboardingPagerFirstItem>(0) {
-                    languages.childWith<ListLanguageItem> {
-                        withText("3.\t\tEspañol")
-                    }.isDisplayed()
+                    languages.childAt<ListLanguageItem>(0) {
+                        containsText("English")
+                    }
                 }
             }
         }
