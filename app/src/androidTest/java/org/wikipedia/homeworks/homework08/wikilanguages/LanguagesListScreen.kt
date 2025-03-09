@@ -9,7 +9,7 @@ import org.wikipedia.R
 object LanguagesListScreen: KScreen<LanguagesListScreen>() {
     override val layoutId: Int? = null
     override val viewClass: Class<*>? = null
-
+w
     val searchEmptyText = KTextView {
         withId(R.id.search_empty_text)
     }

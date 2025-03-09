@@ -29,9 +29,13 @@ class EndToEndTest : TestCase() {
                     }
 
                 }.perform {
-                    header.hasText("In the news")
-                    sliderCard.childAt<CardItem>(2) {
-                        listImage.click()
+                    step("Check header in the block news") {
+                        header.hasText("In the news")
+                    }
+                    step("Click on the third article in the list") {
+                        sliderCard.childAt<CardItem>(2) {
+                            listImage.click()
+                        }
                     }
                 }
             }
@@ -41,7 +45,7 @@ class EndToEndTest : TestCase() {
                 }
             }
             step("Check that the element with the identifier page_web_view is displayed") {
-                KView {withId(R.id.page_web_view)}.isDisplayed()
+                KView { withId(R.id.page_web_view) }.isDisplayed()
             }
         }
     }
