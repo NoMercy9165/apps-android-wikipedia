@@ -100,4 +100,19 @@ class AppDeviceTest: TestCase() {
             }
         }
     }
+
+
+    @Test
+    fun testLanguageChange() {
+        before {  }.after { device.language.switchInApp(Locale.getDefault()) }.run {
+            step("Change app language") {
+                step("Change app language to Germany") {
+                    device.language.switchInApp(Locale.GERMANY)
+                }
+                step("Check continue button text") {
+                    OnboardingScreens.continueButton.hasText("Fortfahren")
+                }
+            }
+        }
+    }
 }
