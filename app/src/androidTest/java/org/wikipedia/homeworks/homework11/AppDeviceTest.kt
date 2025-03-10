@@ -63,4 +63,17 @@ class AppDeviceTest: TestCase() {
             }
         }
     }
+
+
+    @Test
+    fun testCurrentActivity() {
+        run {
+            step("Onboarding skip button click") {
+                OnboardingScreens.skipButton.click()
+            }
+            step("Check current activity") {
+                device.activities.isCurrent(MainActivity::class.java)
+            }
+        }
+    }
 }
