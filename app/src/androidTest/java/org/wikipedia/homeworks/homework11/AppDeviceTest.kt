@@ -6,6 +6,7 @@ import org.junit.After
 import org.junit.Rule
 import org.junit.Test
 import org.wikipedia.homeworks.homework08.onboarding.OnboardingScreens
+import org.wikipedia.homeworks.homework09.ExploreScreens
 import org.wikipedia.main.MainActivity
 import java.util.Locale
 
@@ -73,6 +74,29 @@ class AppDeviceTest: TestCase() {
             }
             step("Check current activity") {
                 device.activities.isCurrent(MainActivity::class.java)
+            }
+        }
+    }
+
+
+    @Test
+    fun testAppMinimizeAndRestore() {
+        run {
+            step("Onboarding skip button click") {
+                OnboardingScreens.skipButton.click()
+            }
+            step("Minimize and restore app") {
+                step("Press home button") {
+                    device.uiDevice.pressHome()
+                }
+                step("Double tap on RecentApps button") {
+                    device.uiDevice.pressRecentApps()
+                    device.uiDevice.pressRecentApps()
+                }
+                ExploreScreens.toolBar.isDisplayed()
+            }
+            step("Check toolbar is displayed") {
+                ExploreScreens.toolBar.isDisplayed()
             }
         }
     }
