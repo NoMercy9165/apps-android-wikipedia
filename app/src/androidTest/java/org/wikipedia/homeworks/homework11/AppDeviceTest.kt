@@ -10,7 +10,7 @@ import org.wikipedia.homeworks.homework09.ExploreScreens
 import org.wikipedia.main.MainActivity
 import java.util.Locale
 
-class AppDeviceTest: TestCase() {
+class AppDeviceTest : TestCase() {
     @get:Rule
     val activityScenarioRule = ActivityScenarioRule(MainActivity::class.java)
 
@@ -104,7 +104,7 @@ class AppDeviceTest: TestCase() {
 
     @Test
     fun testLanguageChange() {
-        before {  }.after { device.language.switchInApp(Locale.getDefault()) }.run {
+        before { }.after { device.language.switchInApp(Locale.getDefault()) }.run {
             step("Change app language") {
                 step("Change app language to Germany") {
                     device.language.switchInApp(Locale.GERMANY)
