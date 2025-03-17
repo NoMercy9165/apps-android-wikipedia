@@ -12,15 +12,15 @@ object ModalWindowScreen : KScreen<ModalWindowScreen>() {
     override val viewClass: Class<*>? = null
 
 
-    val titleText = KTextView() {
+    val titleText = KTextView {
         withId(R.id.reference_title_text)
     }
 
-    val indicator = KView() {
+    val indicator = KView {
         withId(R.id.indicator_divider)
     }
 
-    val tab = KTabLayout() {
+    val tab = KTabLayout {
         withId(R.id.page_indicator_view)
     }
 

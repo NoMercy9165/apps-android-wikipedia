@@ -1,7 +1,6 @@
 package org.wikipedia.homeworks.homework13
 import android.view.View
 import io.github.kakaocup.kakao.image.KImageView
-import io.github.kakaocup.kakao.pager2.KViewPager2
 import io.github.kakaocup.kakao.pager2.KViewPagerItem
 import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
