@@ -25,7 +25,7 @@ class WebViewTest : TestCase() {
             }
             step("Click on the article in the Featured block") {
                 ExploreScreen.items.childWith<InTheNewsCardItem> {
-                    withDescendant { withText("Featured article") }
+                    withDescendant { withText("Territorial Force") }
                 }.perform {
                     click()
                 }
@@ -80,6 +80,10 @@ class WebViewTest : TestCase() {
                         this.click()
                     }
                 }
+            }
+            step("Click the button to go to a new article") {
+                BottomSheetArticleScreen.readArticleButton.click()
+                Thread.sleep(6000)
             }
         }
     }
