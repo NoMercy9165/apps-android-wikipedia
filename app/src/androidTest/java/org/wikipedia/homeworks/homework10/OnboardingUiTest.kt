@@ -4,6 +4,7 @@ import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import org.junit.Test
+import org.wikipedia.homeworks.homework19.Steps
 import org.wikipedia.main.MainActivity
 
 class OnboardingUiTest: TestCase() {
@@ -14,7 +15,7 @@ class OnboardingUiTest: TestCase() {
     @Test
     fun textFirstElement() {
         run {
-            step("First screen elements") {
+            val steps = Steps(this)
                 OnboardingUiScreen.imageView.isDisplayed()
                 OnboardingUiScreen.primaryText.isDisplayed()
                 OnboardingUiScreen.secondaryText.isDisplayed()
@@ -23,7 +24,7 @@ class OnboardingUiTest: TestCase() {
                 OnboardingUiScreen.skipButton.isDisplayed()
                 OnboardingUiScreen.continueButton.isDisplayed()
                 OnboardingUiScreen.getStartedButton.isDisplayed()
-            }
+
         }
     }
 

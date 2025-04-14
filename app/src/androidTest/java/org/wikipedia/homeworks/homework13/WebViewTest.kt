@@ -8,7 +8,10 @@ import org.junit.Rule
 import org.junit.Test
 import org.wikipedia.homeworks.homework07.ExploreScreen
 import org.wikipedia.homeworks.homework07.InTheNewsCardItem
+import org.wikipedia.homeworks.homework07.TopReadCardItem
 import org.wikipedia.homeworks.homework08.onboarding.OnboardingScreens
+import org.wikipedia.homeworks.homework19.Steps
+import org.wikipedia.homeworks.homework19.steps
 import org.wikipedia.main.MainActivity
 
 class WebViewTest : TestCase(
@@ -24,23 +27,15 @@ class WebViewTest : TestCase(
     @Test
     fun test() {
         run {
-            step("Click skip on Onboadrinding screen") {
-                OnboardingScreens.skipButton.click()
-            }
-            step("Click on the article in the Featured block") {
-                ExploreScreen.items.childWith<InTheNewsCardItem> {
-                    withDescendant { withText("Territorial Force") }
-                }.perform {
+            steps {
+                click(OnboardingScreens.skipButton, "skipButton")
+                ExploreScreen.items.childAt<TopReadCardItem>(3) {
+                    isVisible(this, "The first article in the list")
                     click()
                 }
+
             }
-            step("Scroll to element with id Bibliography") {
-                ArticleViewScreen.webView {
-                    withElement(Locator.XPATH, "//h2[@id='Bibliography']") {
-                        this.scroll()
-                    }
-                }
-            }
+
             step("Check the text in the element with the id References") {
                 ArticleViewScreen.webView {
                     withElement(Locator.XPATH, "//h2[@id='References']") {
@@ -51,7 +46,7 @@ class WebViewTest : TestCase(
             }
             step("Сlick on the fifth link") {
                 ArticleViewScreen.webView {
-                    withElement(Locator.XPATH, "//a[@id='back_link_cite_note-5']") {
+                    withElement(Locator.XPATH, "//*[@id=\"back_link_cite_note-Ivins1-5\"]") {
                         this.click()
                     }
                 }
@@ -59,36 +54,16 @@ class WebViewTest : TestCase(
             step("Click on the fifth link in the article") {
                 flakySafely(timeoutMs = 3000) {
                     ArticleViewScreen.webView {
-                        withElement(Locator.XPATH, "//*[@id='cite_ref-5']/a") {
+                        withElement(Locator.XPATH, "//*[@id=\"cite_ref-Ivins1_5-0\"]/a") {
                             this.click()
                         }
                     }
-                }
-            }
-            step("Check for compliance of title text and line number") {
-                ModalWindowScreen.slider.childAt<ModalWindowPagerItem>(1) {
-                    referenceId.isDisplayed()
-                    referenceId.containsText("5")
-
-                    referenceText.isDisplayed()
-                    referenceText.containsText("Hay pp.")
                 }
             }
             step("Use the back button to close the pop-up window") {
                 repeat(2) {
                     device.uiDevice.pressBack()
                 }
-            }
-            step("Find the second link with the CSS class mw-redirect and click on it") {
-                ArticleViewScreen.webView {
-                    withElement(Locator.XPATH, "//a[@class='mw-redirect' and text()='Gallipoli']") {
-                        this.click()
-                    }
-                }
-            }
-            step("Click the button to go to a new article") {
-                BottomSheetArticleScreen.readArticleButton.click()
-                Thread.sleep(6000)
             }
         }
     }

@@ -278,6 +278,7 @@ dependencies {
     // Compose Test Library
     androidTestImplementation(libs.compose.test)
     androidTestImplementation(composeBom)
+    implementation "org.jetbrains.kotlin:kotlin-test:2.1.10"
 }
 
 private setSigningConfigKey(config, Properties props) {
