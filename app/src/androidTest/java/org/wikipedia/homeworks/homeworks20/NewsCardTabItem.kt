@@ -1,4 +1,4 @@
-package org.wikipedia.homeworks20
+package org.wikipedia.homeworks.homeworks20
 
 import android.view.View
 import io.github.kakaocup.kakao.image.KImageView

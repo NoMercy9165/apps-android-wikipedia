@@ -1,7 +1,6 @@
-package org.wikipedia.homeworks20
+package org.wikipedia.homeworks.homeworks20
 
 import io.github.kakaocup.kakao.common.actions.BaseActions
-import io.github.kakaocup.kakao.common.assertions.BaseAssertions
 
 val names = mutableMapOf<BaseActions, HierarchyClass>()
 

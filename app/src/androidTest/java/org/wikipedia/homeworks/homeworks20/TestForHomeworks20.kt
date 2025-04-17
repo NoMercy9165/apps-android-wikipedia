@@ -1,9 +1,8 @@
-package org.wikipedia.homeworks20
+package org.wikipedia.homeworks.homeworks20
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
-import org.junit.Test
 import org.wikipedia.homeworks.homework08.onboarding.OnboardingScreens
 import org.wikipedia.homeworks.homework19.steps
 
@@ -20,6 +19,9 @@ class TestForHomeworks20: TestCase() {
                 tabNewsItem(3) {
                     click(this)
                 }
+            }
+            ExploreScreenNew.topReadCardItem(0) {
+
             }
         }
     }

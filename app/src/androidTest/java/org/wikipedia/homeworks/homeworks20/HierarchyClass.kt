@@ -1,4 +1,4 @@
-package org.wikipedia.homeworks20
+package org.wikipedia.homeworks.homeworks20
 
 class HierarchyClass(val name: String, val parent: HierarchyClass? = null) {
 

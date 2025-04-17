@@ -1,7 +1,6 @@
-package org.wikipedia.homeworks20
+package org.wikipedia.homeworks.homeworks20
 
 import com.kaspersky.kaspresso.screens.KScreen
-import io.github.kakaocup.kakao.screen.Screen
 
 abstract class NamedKScreen<out T : KScreen<T>> : KScreen<T>() {
 

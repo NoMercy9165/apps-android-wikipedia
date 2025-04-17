@@ -11,7 +11,7 @@ import io.github.kakaocup.kakao.common.actions.BaseActions
 import io.github.kakaocup.kakao.common.assertions.BaseAssertions
 import io.github.kakaocup.kakao.edit.EditableActions
 import io.github.kakaocup.kakao.text.TextViewAssertions
-import org.wikipedia.homeworks20.getName
+import org.wikipedia.homeworks.homeworks20.getName
 
 class Steps(val testContext: TestContext<*>) {
 
@@ -30,7 +30,7 @@ class Steps(val testContext: TestContext<*>) {
     }
 
     fun isVisible(item: BaseAssertions) {
-        execute("$item.ge is displayed") {
+        execute("$item is displayed") {
             item.isVisible()
         }
     }
