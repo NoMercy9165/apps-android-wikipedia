@@ -28,9 +28,9 @@ class WebViewTest : TestCase(
     fun test() {
         run {
             steps {
-                click(OnboardingScreens.skipButton)
+                click(OnboardingScreens.skipButton, "Skip button")
                 ExploreScreen.items.childAt<TopReadCardItem>(3) {
-                    isVisible(this)
+                    isVisible()
                     click()
                 }
 

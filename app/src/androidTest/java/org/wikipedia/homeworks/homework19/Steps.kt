@@ -3,6 +3,7 @@ package org.wikipedia.homeworks.homework19
 import androidx.annotation.StringRes
 import androidx.test.uiautomator.UiDevice
 import com.kaspersky.components.kautomator.component.check.UiCheckableAssertions
+import com.kaspersky.kaspresso.device.Device
 import com.kaspersky.kaspresso.device.network.Network
 import com.kaspersky.kaspresso.testcases.core.testcontext.TestContext
 import com.kaspersky.kaspresso.testcases.models.info.StepInfo
@@ -11,7 +12,7 @@ import io.github.kakaocup.kakao.common.actions.BaseActions
 import io.github.kakaocup.kakao.common.assertions.BaseAssertions
 import io.github.kakaocup.kakao.edit.EditableActions
 import io.github.kakaocup.kakao.text.TextViewAssertions
-import org.wikipedia.homeworks.homeworks20.getName
+
 
 class Steps(val testContext: TestContext<*>) {
 
@@ -23,14 +24,14 @@ class Steps(val testContext: TestContext<*>) {
         function()
     }
 
-    fun click(item: BaseActions) {
-        execute("Click ${item.getName()}") {
+    fun click(item: BaseActions, name: String) {
+        execute("$name click") {
             item.click()
         }
     }
 
-    fun isVisible(item: BaseAssertions) {
-        execute("$item is displayed") {
+    fun isVisible(item: BaseAssertions, name: String) {
+        execute("$name is visible") {
             item.isVisible()
         }
     }
@@ -47,22 +48,22 @@ class Steps(val testContext: TestContext<*>) {
         }
     }
 
-    fun setOrientationNatural(device: UiDevice) {
+    fun setOrientationNatural(device: Device) {
         execute("Set orientation to natural") {
-            device.setOrientationNatural()
+            device.uiDevice.setOrientationNatural()
         }
 
     }
 
-    fun setOrientationRight(device: UiDevice) {
+    fun setOrientationRight(device: Device) {
         execute("Set orientation to right") {
-            device.setOrientationRight()
+            device.uiDevice.setOrientationRight()
         }
     }
 
-    fun setOrientationLeft(device: UiDevice) {
+    fun setOrientationLeft(device: Device) {
         execute("Set orientation to left") {
-            device.setOrientationLeft()
+            device.uiDevice.setOrientationLeft()
         }
     }
 
@@ -72,9 +73,9 @@ class Steps(val testContext: TestContext<*>) {
         }
     }
 
-    fun hasText(item: TextViewAssertions, @StringRes resId: Int) {
-        execute("Check if text is ${testContext.getString(resId)}") {
-            item.hasText(resId)
+    fun hasText(item: TextViewAssertions, string: String) {
+        execute("Check if text is $string") {
+            item.hasText(string)
         }
     }
 
@@ -102,15 +103,15 @@ class Steps(val testContext: TestContext<*>) {
         }
     }
 
-    fun enableNetwork(device: Network) {
+    fun enableNetwork(device: Device) {
         execute("Enable network") {
-            device.enable()
+            device.network.enable()
         }
     }
 
-    fun disableNetwork(device: Network) {
+    fun disableNetwork(device: Device) {
         execute("Disable network") {
-            device.disable()
+            device.network.disable()
         }
     }
 
@@ -120,7 +121,6 @@ class Steps(val testContext: TestContext<*>) {
             item.typeText(text)
         }
     }
-
 
 
 }
