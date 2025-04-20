@@ -7,23 +7,31 @@ import io.github.kakaocup.kakao.recycler.KRecyclerItem
 import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
 import org.wikipedia.R
+import org.wikipedia.homeworks.homeworks20.getName
+import org.wikipedia.homeworks.homeworks20.withParent
 
 class ListTopReadCardItem(matcher: Matcher<View>) : KRecyclerItem<ListTopReadCardItem>(matcher) {
 
-    val rank = KTextView(matcher) {
-        withId(R.id.numberView)
+    val rank by lazy {
+        KTextView(matcher) {
+            withId(R.id.numberView)
+        }.getName(withParent("Rank"))
     }
 
-    val titles = KTextView(matcher) {
-        withId(R.id.view_list_card_item_title)
+    val titles by lazy {
+        KTextView(matcher) {
+            withId(R.id.view_list_card_item_title)
+        }.getName(withParent("Titles"))
     }
 
     val descriptions = KTextView(matcher) {
         withId(R.id.view_list_card_item_subtitle)
     }
 
-    val cardImage = KImageView(matcher) {
-        withId(R.id.view_list_card_item_image)
+    val cardImage by lazy {
+        KImageView(matcher) {
+            withId(R.id.view_list_card_item_image)
+        }.getName(withParent("Card image"))
     }
 
     val graph = KView(matcher) {

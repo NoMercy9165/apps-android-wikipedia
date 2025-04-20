@@ -15,6 +15,7 @@ class TopReadCardItem(matcher: Matcher<View>) : KRecyclerItem<TopReadCardItem>(m
         withId(R.id.view_card_header_title)
     }
 
+
     val languageCode = KTextView(matcher) {
         withId(R.id.langCodeText)
     }

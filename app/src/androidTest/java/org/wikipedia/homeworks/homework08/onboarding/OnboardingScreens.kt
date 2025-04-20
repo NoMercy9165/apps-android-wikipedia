@@ -1,14 +1,16 @@
 package org.wikipedia.homeworks.homework08.onboarding
 
-import com.kaspersky.kaspresso.screens.KScreen
 import io.github.kakaocup.kakao.pager2.KViewPager2
 import io.github.kakaocup.kakao.text.KButton
 import org.wikipedia.R
+import org.wikipedia.homeworks.homeworks20.NamedKScreen
+import org.wikipedia.homeworks.homeworks20.getName
 
-object OnboardingScreens : KScreen<OnboardingScreens>() {
+object OnboardingScreens : NamedKScreen<OnboardingScreens>() {
 
     override val layoutId = R.layout.fragment_onboarding_pager
     override val viewClass = null
+    override val screenName = "Onboarding"
 
     val slider = KViewPager2(
         builder = {
@@ -19,8 +21,10 @@ object OnboardingScreens : KScreen<OnboardingScreens>() {
         }
     )
 
-    val skipButton = KButton() {
-        withId(R.id.fragment_onboarding_skip_button)
+    val skipButton by lazy {
+        KButton {
+            withId(R.id.fragment_onboarding_skip_button)
+        }.getName(withParent("Skip button"))
     }
 
     val continueButton = KButton() {
