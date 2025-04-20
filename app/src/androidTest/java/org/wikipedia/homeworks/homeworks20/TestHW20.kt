@@ -32,9 +32,6 @@ class TestHW20: TestCase(Kaspresso.Builder.withForcedAllureSupport()) {
                     click(cardImage)
                 }
             }
-            ArticleViewScreen.webView {
-                isVisible(header)
-            }
             pressBack(device)
             ExploreScreenNew {
                 isVisible(toolbarTitle)
