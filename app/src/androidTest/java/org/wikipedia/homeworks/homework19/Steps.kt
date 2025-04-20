@@ -123,4 +123,11 @@ class Steps(val testContext: TestContext<*>) {
     }
 
 
+    fun pressBack(device: Device) {
+        execute("Press back") {
+            device.uiDevice.pressBack()
+        }
+    }
+
+
 }

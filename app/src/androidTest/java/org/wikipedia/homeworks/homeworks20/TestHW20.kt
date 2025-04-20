@@ -7,6 +7,8 @@ import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
 import org.junit.Test
 import org.wikipedia.homeworks.homework08.onboarding.OnboardingScreens
+import org.wikipedia.homeworks.homework13.ArticleViewScreen
+import org.wikipedia.homeworks.homework13.ArticleViewScreen.header
 import org.wikipedia.main.MainActivity
 
 class TestHW20: TestCase(Kaspresso.Builder.withForcedAllureSupport()) {
@@ -22,6 +24,20 @@ class TestHW20: TestCase(Kaspresso.Builder.withForcedAllureSupport()) {
             click(OnboardingScreens.skipButton)
             ExploreScreenNew.topReadItemText {
                 isVisible(cardHeader)
+                isVisible(cardHeaderMenu)
+                listTopRead(2) {
+                    isVisible(rank)
+                    isVisible(titles)
+                    isVisible(cardImage)
+                    click(cardImage)
+                }
+            }
+            ArticleViewScreen.webView {
+                isVisible(header)
+            }
+            pressBack(device)
+            ExploreScreenNew {
+                isVisible(toolbarTitle)
             }
         }
     }
