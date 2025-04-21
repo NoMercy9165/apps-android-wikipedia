@@ -6,7 +6,7 @@ import io.github.kakaocup.kakao.recycler.KRecyclerView
 inline fun <reified T : KRecyclerItem<*>> KRecyclerView.invokeAtIndex(index: Int, function: T.() -> Unit) {
     val recycler = this
     childAt<T>(index) {
-        getName(recycler.getName().withParent("$index"))
+        name(recycler.name().withParent("$index"))
         function()
     }
 }
@@ -24,6 +24,6 @@ inline fun <reified T : KRecyclerItem<*>> KRecyclerView.invokeAtDescendantText(
             }
         }
     )
-    item.getName(recycler.getName().withParent(descendantText))
+    item.name(recycler.name().withParent(descendantText))
     item.function()
 }

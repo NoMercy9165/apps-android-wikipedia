@@ -8,7 +8,7 @@ import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
 import org.wikipedia.R
 import org.wikipedia.homeworks.homeworks20.invokeAtIndex
-import org.wikipedia.homeworks.homeworks20.getName
+import org.wikipedia.homeworks.homeworks20.name
 import org.wikipedia.homeworks.homeworks20.withParent
 
 
@@ -17,19 +17,19 @@ class TopReadCardItemNew(matcher: Matcher<View>) : KRecyclerItem<TopReadCardItem
     val cardHeader by lazy {
         KTextView(matcher) {
             withId(R.id.view_card_header_title)
-        }.getName(withParent("Header"))
+        }.name(withParent("Header"))
     }
 
     val languageCode by lazy {
         KTextView(matcher) {
             withId(R.id.langCodeText)
-        }.getName(withParent("Language code"))
+        }.name(withParent("Language code"))
     }
 
     val cardHeaderMenu by lazy {
         KImageView(matcher) {
             withId(R.id.view_list_card_header_menu)
-        }.getName(withParent("Header menu"))
+        }.name(withParent("Header menu"))
     }
 
     val topReadList by  lazy {
@@ -41,7 +41,7 @@ class TopReadCardItemNew(matcher: Matcher<View>) : KRecyclerItem<TopReadCardItem
             itemTypeBuilder = {
                 itemType(::ListTopReadCardItem)
             }
-        ).getName(withParent("Список"))
+        ).name(withParent("Список"))
     }
 
     val footerButton = KTextView(matcher) {

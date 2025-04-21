@@ -17,7 +17,7 @@ object ExploreScreenNew : NamedKScreen<ExploreScreenNew>() {
 
     val toolbarTitle by lazy {
         KImageView { withId(R.id.main_toolbar_wordmark) }
-            .getName(withParent("Заголовок"))
+            .name(withParent("Заголовок"))
     }
 
 
@@ -33,7 +33,7 @@ object ExploreScreenNew : NamedKScreen<ExploreScreenNew>() {
                 itemType(::DateHeaderCardItem)
                 itemType(::TopReadCardItemNew)
             }
-        ).getName(withParent("Список блоков"))
+        ).name(withParent("Список блоков"))
     }
 
     fun topReadItem(index: Int, function: TopReadCardItemNew.() -> Unit) {

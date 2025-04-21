@@ -17,13 +17,13 @@ class NamedSteps(val testContext: TestContext<*>) {
     }
 
     fun click(item: BaseActions) {
-        execute("Click to ${item.getName()}") {
+        execute("Click to ${item.name()}") {
             item.click()
         }
     }
 
     fun isVisible(item: BaseAssertions) {
-        execute("Check that is visible '${(item as BaseActions).getName()}'") {
+        execute("Check that is visible '${(item as BaseActions).name()}'") {
             item.isVisible()
         }
     }

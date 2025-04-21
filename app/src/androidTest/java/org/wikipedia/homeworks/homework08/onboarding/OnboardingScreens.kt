@@ -4,7 +4,7 @@ import io.github.kakaocup.kakao.pager2.KViewPager2
 import io.github.kakaocup.kakao.text.KButton
 import org.wikipedia.R
 import org.wikipedia.homeworks.homeworks20.NamedKScreen
-import org.wikipedia.homeworks.homeworks20.getName
+import org.wikipedia.homeworks.homeworks20.name
 
 object OnboardingScreens : NamedKScreen<OnboardingScreens>() {
 
@@ -24,7 +24,7 @@ object OnboardingScreens : NamedKScreen<OnboardingScreens>() {
     val skipButton by lazy {
         KButton {
             withId(R.id.fragment_onboarding_skip_button)
-        }.getName(withParent("Skip button"))
+        }.name(withParent("Skip button"))
     }
 
     val continueButton = KButton() {
