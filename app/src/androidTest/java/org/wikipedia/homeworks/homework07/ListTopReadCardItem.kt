@@ -34,8 +34,10 @@ class ListTopReadCardItem(matcher: Matcher<View>) : KRecyclerItem<ListTopReadCar
         }.name(withParent("Card image"))
     }
 
-    val graph = KView(matcher) {
-        withId(R.id.view_list_card_item_graph)
+    val graph by lazy {
+        KView(matcher) {
+            withId(R.id.view_list_card_item_graph)
+        }.name(withParent("Graph"))
     }
 
     val pageViews = KTextView(matcher) {
